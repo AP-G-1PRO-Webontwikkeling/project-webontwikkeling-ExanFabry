@@ -1,0 +1,173 @@
+[
+    {
+      "id": 1,
+      "name": "Black Lotus",
+      "description": "Add three mana of any one color to your mana pool. Then shuffle Black Lotus into its owner's library.",
+      "price": 25000,
+      "legalInCommander": false,
+      "date": "2024-02-21",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ZXQ8Vo7-3bUmbZWh78dTAwHaKU%26pid%3DApi&f=1&ipt=c6fbaaa58c81ec8604820a27e9005cfb1276f0f34033745db5267fc1946b6a05&ipo=images",
+      "color": "colorless",
+      "types": ["artifact"],
+      "set": {
+        "id": 1,
+        "name": "Alpha",
+        "code": "LEA",
+        "release": "1993-08-05",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fafdd_sMUSTg%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=1939d8be3e8455786889c29cf24108606b4dd4f121a2ae22625249b3ec502d8d&ipo=images"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jace, the Mind Sculptor",
+      "description": "+2: Look at the top card of target player's library. You may put that card on the bottom of that player's library. 0: Draw three cards, then put two cards from your hand on top of your library in any order. -1: Return target creature to its owner's hand. -12: Exile all cards from target player's library, then that player shuffles their hand into their library.",
+      "price": 100,
+      "legalInCommander": true,
+      "date": "2024-02-20",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fed%2F86%2F3b%2Fed863b2ffdc315da5800fb722765d0ed.png&f=1&nofb=1&ipt=570655ad9ac9b8a456169b7f3ec02092e3cff734ad4f93c6ba63c8d60705c6b2&ipo=images",
+      "color": "blue",
+      "types": ["planeswalker", "jace"],
+      "set": {
+        "id": 2,
+        "name": "Worldwake",
+        "code": "WWK",
+        "release": "2010-02-05",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fd1rw89lz12ur5s.cloudfront.net%2Fphoto%2Fgradedpower%2Ffile%2Ff82517c0ed0511e880905374bf33b077%2FWorldwake.jpg&f=1&nofb=1&ipt=4a7c1058344302f056695e47cab630d1bd4f1b2384e16ebd5fa5b18a0eed847b&ipo=images"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Lightning Bolt",
+      "description": "Lightning Bolt deals 3 damage to any target.",
+      "price": 2,
+      "legalInCommander": false,
+      "date": "2024-02-19",
+      "image": "https://www.bing.com/th?id=OIP.0Z1Y0QoX9f6n6gY0Zs4Y0wHaHa&pid=15.1",
+      "color": "red",
+      "types": ["instant"],
+      "set": {
+        "id": 3,
+        "name": "Revised",
+        "code": "3ED",
+        "release": "1994-04-01",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1.bp.blogspot.com%2F-ahpj8LaDqAs%2FVcgfHnM6csI%2FAAAAAAAAFzY%2FTKLf7O9SH_s%2Fs1600%2FRE%252B18.png&f=1&nofb=1&ipt=d1f8c9dccd18446b7cde3e88c4ed6689294c7a8e848b5d34ae7ac067970cca5e&ipo=images"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Llanowar Elves",
+      "description": "Tap: Add green to your mana pool.",
+      "price": 0.5,
+      "legalInCommander": true,
+      "date": "2024-02-18",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.m0a7F-wyxbbJcNVa0LVwvAHaKS%26pid%3DApi&f=1&ipt=36ab633e122e4d96a6cb7d4d71a8ca160d9a05882b376f87d3edde14a278aeb8&ipo=images",
+      "color": "green",
+      "types": ["creature", "elf", "druid"],
+      "set": {
+        "id": 4,
+        "name": "Tenth Edition",
+        "code": "10E",
+        "release": "2007-07-13",
+        "image": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F940ee6dce6677fa01d25-0f55c9129972ac85d6b1f4e703468e6b.r99.cf2.rackcdn.com%2Fproducts%2Fpictures%2F154065.jpg&f=1&nofb=1&ipt=da95b0c26cdfcf77111eff62c87ee6a06883d2c9bc51e310d21b5b18722a4d7a&ipo=images"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Swords to Plowshares",
+      "description": "Exile target creature. Its controller gains life equal to its power.",
+      "price": 3,
+      "legalInCommander": true,
+      "date": "2024-02-17",
+      "image": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic.starcitygames.com%2Fsales%2Fcardscans%2FMTG%2FCNS%2Fen%2Fnonfoil%2FSwordsToPlowshares.jpg&f=1&nofb=1&ipt=a719884ab9dc0a9a355af136889923d3ca538332c8a3f1249ea2521479bc6024&ipo=images",
+      "color": "white",
+      "types": ["instant"],
+      "set": {
+        "id": 5,
+        "name": "Eternal Masters",
+        "code": "EMA",
+        "release": "2016-06-10",
+        "image": "https://www.bing.com/th?id=OIP.0Z1Y0QoX9f6n6gY0Zs4Y0wHaHa&pid=15.1"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Necropotence",
+      "description": "Skip your draw step. Whenever you discard a card, exile that card from your graveyard. Pay 1 life: Exile the top card of your library face down. Put that card into your hand at the beginning of your next end step.",
+      "price": 5,
+      "legalInCommander": true,
+      "date": "2024-02-16",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fc1.scryfall.com%2Ffile%2Fscryfall-cards%2Flarge%2Ffront%2F5%2F4%2F54d7a0c1-efb4-4a8d-ad92-a96d43835052.jpg%3F1562910576&f=1&nofb=1&ipt=fbc8dedcb7436803fa167b1c935153d5c597d7996a67a1adb5aa3549f8d00c40&ipo=images",
+      "color": "black",
+      "types": ["enchantment"],
+      "set": {
+        "id": 6,
+        "name": "Iconic Masters",
+        "code": "IMA",
+        "release": "2017-11-17",
+        "image": "https://www.bing.com/th?id=OIP.0Z1Y0QoX9f6n6gY0Zs4Y0wHaHa&pid=15.1"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Sol Ring",
+      "description": "Tap: Add two colorless mana to your mana pool.",
+      "price": 10,
+      "legalInCommander": true,
+      "date": "2024-02-15",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.5woV46X7ZyOcRHRiJTig9wHaKU%26pid%3DApi&f=1&ipt=e9de93eb79dcf5ae63221f7877784a06afaee1cb2b6138215aa67163f6e3d57e&ipo=images"
+    },
+    {
+      "id": 8,
+      "name": "Counterspell",
+      "description": "Counter target spell.",
+      "price": 1,
+      "legalInCommander": true,
+      "date": "2024-02-14",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fusercontent2.hubstatic.com%2F14203163_f520.jpg&f=1&nofb=1&ipt=7315b0f6e5315f603956569c1efad57ebff35737f915296c49a8eec89a13c89b&ipo=images",
+      "color": "blue",
+      "types": ["instant"],
+      "set": {
+        "id": 7,
+        "name": "Double Masters",
+        "code": "2XM",
+        "release": "2020-08-07",
+        "image": "https://www.bing.com/th?id=OIP.0Z1Y0QoX9f6n6gY0Zs4Y0wHaHa&pid=15.1"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Goblin Guide",
+      "description": "Haste. Whenever Goblin Guide attacks, defending player reveals the top card of their library. If it's a land card, that player puts it into their hand.",
+      "price": 15,
+      "legalInCommander": true,
+      "date": "2024-02-13",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.IpjT0lhPvkvvB0Z9iK1hEAHaKT%26pid%3DApi&f=1&ipt=7031d1d98ab50706af44bf00e1c1f64da9be9c00abe9476095d370b8fd5f494e&ipo=images",
+      "color": "red",
+      "types": ["creature", "goblin", "scout"],
+      "set": {
+        "id": 8,
+        "name": "Zendikar",
+        "code": "ZEN",
+        "release": "2009-10-02",
+        "image": "https://www.bing.com/th?id=OIP.0Z1Y0QoX9f6n6gY0Zs4Y0wHaHa&pid=15.1"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Birds of Paradise",
+      "description": "Flying. Tap: Add one mana of any color to your mana pool.",
+      "price": 5,
+      "legalInCommander": true,
+      "date": "2024-02-12",
+      "image": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic.starcitygames.com%2Fsales%2Fcardscans%2FMTG%2FCN2%2Fen%2Fnonfoil%2FBirdsOfParadise.jpg&f=1&nofb=1&ipt=6da672f231917dcc1a2f7d35afb4efa341effbe9d8ed3d7ecdffa1c5baf17622&ipo=images",
+      "color": "green",
+      "types": ["creature", "bird"],
+      "set": {
+        "id": 9,
+        "name": "Seventh Edition",
+        "code": "7ED",
+        "release": "2001-04-11",
+        "image": "https://www.bing.com/th?id=OIP.0Z1Y0QoX9f6n6gY0Zs4Y0wHaHa&pid=15.1"
+      }
+    }
+    ]
