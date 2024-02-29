@@ -1,7 +1,6 @@
-import readline from 'readline-sync';
 import mtgCards from "../JSON/mtg.json";
 
-export interface Mtg {
+export interface MagicTheGatheringCards {
     id:               number;
     name:             string;
     description:      string;
@@ -21,5 +20,3 @@ export interface Set {
     release: Date;
     image:   string;
 }
-
-export {}
