@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Black Lotus",
+    "description": "Add three mana of any one color to your mana pool. Then shuffle Black Lotus into its owner's library.",
+    "price": 25000,
+    "legalInCommander": false,
+    "date": "2024-02-21",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_black_lotus.jpg?raw=true",
+    "color": "colorless",
+    "types": ["artifact"],
+    "set": {
+      "id": 1,
+      "name": "Alpha",
+      "code": "LEA",
+      "release": "1993-08-05",
+      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_limited_edition_alpha.jpg?raw=true"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Jace, the Mind Sculptor",
+    "description": "+2: Look at the top card of target player's library. You may put that card on the bottom of that player's library. 0: Draw three cards, then put two cards from your hand on top of your library in any order. -1: Return target creature to its owner's hand. -12: Exile all cards from target player's library, then that player shuffles their hand into their library.",
+    "price": 100,
+    "legalInCommander": true,
+    "date": "2024-02-20",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_jace,_the_mind_sculptor.png?raw=true",
+    "color": "blue",
+    "types": ["planeswalker", "jace"],
+    "set": {
+      "id": 2,
+      "name": "Worldwake",
+      "code": "WWK",
+      "release": "2010-02-05",
+      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_worldwake.jpg?raw=true"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Lightning Bolt",
+    "description": "Lightning Bolt deals 3 damage to any target.",
+    "price": 2,
+    "legalInCommander": false,
+    "date": "2024-02-19",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_lightning_bolt.jpg?raw=true",
+    "color": "red",
+    "types": ["instant"],
+    "set": {
+      "id": 3,
+      "name": "Revised",
+      "code": "3ED",
+      "release": "1994-04-01",
+      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_revised_edition.png?raw=true"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Llanowar Elves",
+    "description": "Tap: Add green to your mana pool.",
+    "price": 0.5,
+    "legalInCommander": true,
+    "date": "2024-02-18",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_llanowar_elves.jpg?raw=true",
+    "color": "green",
+    "types": ["creature", "elf", "druid"],
+    "set": {
+      "id": 4,
+      "name": "Tenth Edition",
+      "code": "10E",
+      "release": "2007-07-13",
+      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_tenth_edition.jpg?raw=true"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Swords to Plowshares",
+    "description": "Exile target creature. Its controller gains life equal to its power.",
+    "price": 3,
+    "legalInCommander": true,
+    "date": "2024-02-17",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_swords_to_plowshares.jpg?raw=true",
+    "color": "white",
+    "types": ["instant"],
+    "set": {
+      "id": 5,
+      "name": "Eternal Masters",
+      "code": "EMA",
+      "release": "2016-06-10",
+      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_eternal_masters.jpg?raw=true"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Necropotence",
+    "description": "Skip your draw step. Whenever you discard a card, exile that card from your graveyard. Pay 1 life: Exile the top card of your library face down. Put that card into your hand at the beginning of your next end step.",
+    "price": 5,
+    "legalInCommander": true,
+    "date": "2024-02-16",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_necropotence.jpg?raw=true",
+    "color": "black",
+    "types": ["enchantment"],
+    "set": {
+      "id": 6,
+      "name": "Iconic Masters",
+      "code": "IMA",
+      "release": "2017-11-17",
+      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_iconic_masters.jpg?raw=true"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Sol Ring",
+    "description": "Tap: Add two colorless mana to your mana pool.",
+    "price": 10,
+    "legalInCommander": true,
+    "date": "2024-02-15",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_sol_ring.jpg?raw=true",
+    "color": "colorless",
+    "types": ["artifact"],
+    "set": {
+      "id": 7,
+      "name": "Commander 2017",
+      "code": "COM2017",
+      "release": "2017-08-25",
+      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_commander_2017.jpg?raw=true"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Counterspell",
+    "description": "Counter target spell.",
+    "price": 1,
+    "legalInCommander": true,
+    "date": "2024-02-14",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_counterspell.jpg?raw=true",
+    "color": "blue",
+    "types": ["instant"],
+    "set": {
+      "id": 8,
+      "name": "Double Masters",
+      "code": "2XM",
+      "release": "2020-08-07",
+      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_double_masters.jpg?raw=true"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Goblin Guide",
+    "description": "Haste. Whenever Goblin Guide attacks, defending player reveals the top card of their library. If it's a land card, that player puts it into their hand.",
+    "price": 15,
+    "legalInCommander": true,
+    "date": "2024-02-13",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_goblin_guide.jpg?raw=true",
+    "color": "red",
+    "types": ["creature", "goblin", "scout"],
+    "set": {
+      "id": 9,
+      "name": "Zendikar",
+      "code": "ZEN",
+      "release": "2009-10-02",
+      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_eternal_masters.jpg?raw=true"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Birds of Paradise",
+    "description": "Flying. Tap: Add one mana of any color to your mana pool.",
+    "price": 5,
+    "legalInCommander": true,
+    "date": "2024-02-12",
+    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_birds_of_paradise.jpg?raw=true",
+    "color": "green",
+    "types": ["creature", "bird"],
+    "set": {
+      "id": 10,
+      "name": "Seventh Edition",
+      "code": "7ED",
+      "release": "2001-04-11",
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_seventh_edition.webp"
+    }
+  }
+]
