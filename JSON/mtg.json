@@ -6,7 +6,7 @@
     "price": 25000,
     "legalInCommander": false,
     "date": "2024-02-21",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_black_lotus.jpg?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_black_lotus.jpg",
     "color": "colorless",
     "types": ["artifact"],
     "set": {
@@ -14,7 +14,7 @@
       "name": "Alpha",
       "code": "LEA",
       "release": "1993-08-05",
-      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_limited_edition_alpha.jpg?raw=true"
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_limited_edition_alpha.jpg"
     }
   },
   {
@@ -24,7 +24,7 @@
     "price": 100,
     "legalInCommander": true,
     "date": "2024-02-20",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_jace,_the_mind_sculptor.png?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_jace%2C_the_mind_sculptor.png",
     "color": "blue",
     "types": ["planeswalker", "jace"],
     "set": {
@@ -32,7 +32,7 @@
       "name": "Worldwake",
       "code": "WWK",
       "release": "2010-02-05",
-      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_worldwake.jpg?raw=true"
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_worldwake.jpg"
     }
   },
   {
@@ -42,7 +42,7 @@
     "price": 2,
     "legalInCommander": false,
     "date": "2024-02-19",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_lightning_bolt.jpg?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_lightning_bolt.jpg",
     "color": "red",
     "types": ["instant"],
     "set": {
@@ -50,7 +50,7 @@
       "name": "Revised",
       "code": "3ED",
       "release": "1994-04-01",
-      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_revised_edition.png?raw=true"
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_revised_edition.png"
     }
   },
   {
@@ -60,7 +60,7 @@
     "price": 0.5,
     "legalInCommander": true,
     "date": "2024-02-18",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_llanowar_elves.jpg?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_llanowar_elves.jpg",
     "color": "green",
     "types": ["creature", "elf", "druid"],
     "set": {
@@ -68,7 +68,7 @@
       "name": "Tenth Edition",
       "code": "10E",
       "release": "2007-07-13",
-      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_tenth_edition.jpg?raw=true"
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_tenth_edition.jpg"
     }
   },
   {
@@ -78,7 +78,7 @@
     "price": 3,
     "legalInCommander": true,
     "date": "2024-02-17",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_swords_to_plowshares.jpg?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_swords_to_plowshares.jpg",
     "color": "white",
     "types": ["instant"],
     "set": {
@@ -86,7 +86,7 @@
       "name": "Eternal Masters",
       "code": "EMA",
       "release": "2016-06-10",
-      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_eternal_masters.jpg?raw=true"
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_eternal_masters.jpg"
     }
   },
   {
@@ -96,7 +96,7 @@
     "price": 5,
     "legalInCommander": true,
     "date": "2024-02-16",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_necropotence.jpg?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_necropotence.jpg",
     "color": "black",
     "types": ["enchantment"],
     "set": {
@@ -104,7 +104,7 @@
       "name": "Iconic Masters",
       "code": "IMA",
       "release": "2017-11-17",
-      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_iconic_masters.jpg?raw=true"
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_iconic_masters.jpg"
     }
   },
   {
@@ -114,7 +114,7 @@
     "price": 10,
     "legalInCommander": true,
     "date": "2024-02-15",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_sol_ring.jpg?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_sol_ring.jpg",
     "color": "colorless",
     "types": ["artifact"],
     "set": {
@@ -122,7 +122,7 @@
       "name": "Commander 2017",
       "code": "COM2017",
       "release": "2017-08-25",
-      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_commander_2017.jpg?raw=true"
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_commander_2017.jpg"
     }
   },
   {
@@ -132,7 +132,7 @@
     "price": 1,
     "legalInCommander": true,
     "date": "2024-02-14",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_counterspell.jpg?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_counterspell.jpg",
     "color": "blue",
     "types": ["instant"],
     "set": {
@@ -140,7 +140,7 @@
       "name": "Double Masters",
       "code": "2XM",
       "release": "2020-08-07",
-      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_double_masters.jpg?raw=true"
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_double_masters.jpg"
     }
   },
   {
@@ -150,7 +150,7 @@
     "price": 15,
     "legalInCommander": true,
     "date": "2024-02-13",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_goblin_guide.jpg?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_goblin_guide.jpg",
     "color": "red",
     "types": ["creature", "goblin", "scout"],
     "set": {
@@ -158,7 +158,7 @@
       "name": "Zendikar",
       "code": "ZEN",
       "release": "2009-10-02",
-      "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_eternal_masters.jpg?raw=true"
+      "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_eternal_masters.jpg"
     }
   },
   {
@@ -168,7 +168,7 @@
     "price": 5,
     "legalInCommander": true,
     "date": "2024-02-12",
-    "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/card_birds_of_paradise.jpg?raw=true",
+    "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/card_birds_of_paradise.jpg",
     "color": "green",
     "types": ["creature", "bird"],
     "set": {

@@ -4,63 +4,63 @@
         "name": "Alpha",
         "code": "LEA",
         "release": "1993-08-05",
-        "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_limited_edition_alpha.jpg?raw=true"
+        "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_limited_edition_alpha.jpg"
     },
     {
         "id": 2,
         "name": "Worldwake",
         "code": "WWK",
         "release": "2010-02-05",
-        "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_worldwake.jpg?raw=true"
+        "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_worldwake.jpg"
     },
     {
         "id": 3,
         "name": "Revised",
         "code": "3ED",
         "release": "1994-04-01",
-        "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_revised_edition.png?raw=true"
+        "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_revised_edition.png"
     },
     {
         "id": 4,
         "name": "Tenth Edition",
         "code": "10E",
         "release": "2007-07-13",
-        "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_tenth_edition.jpg?raw=true"
+        "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_tenth_edition.jpg"
     },
     {
         "id": 5,
         "name": "Eternal Masters",
         "code": "EMA",
         "release": "2016-06-10",
-        "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_eternal_masters.jpg?raw=true"
+        "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_eternal_masters.jpg"
     },
     {
         "id": 6,
         "name": "Iconic Masters",
         "code": "IMA",
         "release": "2017-11-17",
-        "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_iconic_masters.jpg?raw=true"
+        "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_iconic_masters.jpg"
     },
     {
         "id": 7,
         "name": "Commander 2017",
         "code": "COM2017",
         "release": "2017-08-25",
-        "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_commander_2017.jpg?raw=true"
+        "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_commander_2017.jpg"
     },
     {
         "id": 8,
         "name": "Double Masters",
         "code": "2XM",
         "release": "2020-08-07",
-        "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_double_masters.jpg?raw=true"
+        "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_double_masters.jpg"
     },
     {
         "id": 9,
         "name": "Zendikar",
         "code": "ZEN",
         "release": "2009-10-02",
-        "image": "https://github.com/ExanFabry/Projectopdracht/blob/master/assets/images/set_eternal_masters.jpg?raw=true"
+        "image": "https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/assets/images/set_eternal_masters.jpg"
     },
     {
         "id": 10,
