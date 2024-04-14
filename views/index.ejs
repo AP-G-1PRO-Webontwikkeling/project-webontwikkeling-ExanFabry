@@ -3,15 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/reset.css">
-    <link href="./output.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/modal.js" defer></script>
     <title>Home</title>
 </head>
 <body>
-    <header>
-        <a href="">Home</a>
-        <a href="">Sets</a>
-    </header>
+    <%- include("partials/header") %>
+    <main class="allCards">
+        <form action="" method="get">
+            <p>Zoek kaart:</p>
+            <input type="search" name="q" id="<%= searchCard %>">
+            <button id="searchCardButton">Search</button>
+        </form>
+        <section class="namesOfElements">
+            <p>Image</p>
+            <form action="/sortName" method="get">
+                <button>Name</button>
+            </form>
+            <form action="/sortPrice" method="get">
+                <button>Price</button>
+            </form>
+            <form action="/sortLegal" method="get">
+                <button>Legal In Commander</button>
+            </form>
+            <form action="/sortColor" method="get">
+                <button>Color</button>
+            </form>
+            <form action="/sortSet" method="get">
+                <button>Set</button>
+            </form>
+        </section>
+        <% for( let index = 0; index < magicTheGathering.length; index++ ) { %>
+            <section class="cards">
+                <img src="<%= magicTheGathering[index].image %>" alt="<%= magicTheGathering[index].name %>" class="ModalTrigger">
+                <p class="ModalTrigger"><%= magicTheGathering[index].name %></p>
+                <p class="ModalTrigger"><%= magicTheGathering[index].price %></p>
+                <% if (magicTheGathering[index].legalInCommander === true) { %>
+                    <p class="ModalTrigger">Legaal</p>
+                <% } %>
+                <% if (magicTheGathering[index].legalInCommander === false) { %>
+                    <p class="ModalTrigger">Illegaal</p>
+                <% } %>
+                <p class="ModalTrigger"><%= magicTheGathering[index].color %></p>
+                <p class="ModalTrigger"><%= magicTheGathering[index].set.name %></p>
+                <!-- The Modal -->
+                <div class="Modal">
+                    <!-- Modal content -->
+                    <div class="ModalContent">
+                        <img src="<%= magicTheGathering[index].image %>" alt="">
+                        <p>Naam: <%= magicTheGathering[index].name %></p>
+                        <p>Prijs: <%= magicTheGathering[index].price %></p>
+                        <% if (magicTheGathering[index].legalInCommander === true) { %>
+                            <p>Legaal in commander: Legaal</p>
+                        <% } %>
+                        <% if (magicTheGathering[index].legalInCommander === false) { %>
+                            <p>Legaal in commander: Illegaal</p>
+                        <% } %>
+                        <p>Color: <%= magicTheGathering[index].color %></p>
+                        <p>Set: <%= magicTheGathering[index].set.name %> (<%= magicTheGathering[index].set.code %>)</p>
+                        <p class="ModalTrigger">Release datum set: <%= magicTheGathering[index].set.release %></p>
+                        <span class="ModalClose">X</span>
+                    </div>
+                </div>
+            </section>
+        <% } %>
+    </main>
+    <%- include("partials/footer") %>
 </body>
 </html>

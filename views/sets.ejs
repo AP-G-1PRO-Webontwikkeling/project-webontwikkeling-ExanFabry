@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/modal.js" defer></script>
+    <title>Sets</title>
+</head>
+<body>
+    <%- include("partials/header") %>
+    <main class="allCards">
+        <form action="" method="get">
+            <input type="search" name="q" id="<%= searchSet %>">
+            <button id="searchCardButton">Search</button>
+        </form>
+        <section class="namesOfElements">
+            <p>Image</p>
+            <form action="/sortSetSetPage" method="get">
+                <button>Name</button>
+            </form>
+            <form action="/sortDateSetPage" method="get">
+                <button>Releasedate</button>
+            </form>
+        </section>
+        <% for( let index = 0; index < magicTheGathering.length; index++ ) { %>
+            <section class="cards">
+                <img src="<%= magicTheGathering[index].set.image %>" alt="<%= magicTheGathering[index].set.name %>" class="ModalTrigger">
+                <p class="ModalTrigger"><%= magicTheGathering[index].set.name %></p>
+                <p class="ModalTrigger"><%= magicTheGathering[index].set.release %></p>
+                <!-- The Modal -->
+                <div class="Modal">
+                    <!-- Modal content -->
+                    <div class="ModalContent">
+                        <img src="<%= magicTheGathering[index].set.image %>" alt="">
+                        <p>Naam: <%= magicTheGathering[index].set.name %></p>
+                        <p>Prijs: <%= magicTheGathering[index].set.release %></p>
+                        <span class="ModalClose">X</span>
+                    </div>
+                </div>
+            </section>
+        <% } %>
+    </main>
+    <%- include("partials/footer") %>
+</body>
+</html>
