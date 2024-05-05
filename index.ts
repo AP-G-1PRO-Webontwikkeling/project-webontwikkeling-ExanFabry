@@ -1,6 +1,10 @@
 import express from "express";
 import ejs from "ejs";
 import { MagicTheGatheringCards, Set } from './ConsoleApp/interfaces';
+import { MongoClient } from "mongodb";
+
+const uri = "mongodb+srv://Exan:DatabaseLaboOefeningen@cluster0.dxopdrp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const client = new MongoClient(uri);
 
 const app = express();
 
@@ -16,7 +20,7 @@ let counterSortSet : number = 0;
 
 app.get("/", async (req,res)=> {
   let searchCard : string = String(req.query.q || "");
-  let magicTheGatheringCards = await magicTheGathering();
+  let magicTheGatheringCards = await main();
   if (!searchCard || searchCard.trim() === "" || searchCard == null) {
     console.log("Hello world");
     res.render("index",{
@@ -25,7 +29,7 @@ app.get("/", async (req,res)=> {
     })
   } 
   else {
-    magicTheGatheringCards = magicTheGatheringCards.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
+    magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard
@@ -35,7 +39,7 @@ app.get("/", async (req,res)=> {
 
 app.get("/sortName", async (req,res)=> {
   let searchCard : string = String(req.query.q || "");
-  let magicTheGatheringCards = await magicTheGathering();
+  let magicTheGatheringCards = await main();
   let sortName : boolean;
   if(counterSortName === 0 || counterSortName % 2 === 0){
     sortName = true;
@@ -44,12 +48,12 @@ app.get("/sortName", async (req,res)=> {
     sortName = false;
   }
   if(sortName){
-    magicTheGatheringCards.sort((a, b) => a.name.localeCompare(b.name));
+    magicTheGatheringCards?.sort((a, b) => a.name.localeCompare(b.name));
     sortName = false;
     counterSortName++;
   }
   else if(!sortName){
-    magicTheGatheringCards.sort((a, b) => b.name.localeCompare(a.name));
+    magicTheGatheringCards?.sort((a, b) => b.name.localeCompare(a.name));
     sortName = true;
     counterSortName++;
   }
@@ -61,7 +65,7 @@ app.get("/sortName", async (req,res)=> {
     })
   } 
   else {
-    magicTheGatheringCards = magicTheGatheringCards.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
+    magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard
@@ -71,7 +75,7 @@ app.get("/sortName", async (req,res)=> {
 
 app.get("/sortPrice", async (req,res)=> {
   let searchCard : string = String(req.query.q || "");
-  let magicTheGatheringCards = await magicTheGathering();
+  let magicTheGatheringCards = await main();
   let sortPrice : boolean;
   if(counterSortPrice === 0 || counterSortPrice % 2 === 0){
     sortPrice = true;
@@ -80,12 +84,12 @@ app.get("/sortPrice", async (req,res)=> {
     sortPrice = false;
   }
   if(sortPrice){
-    magicTheGatheringCards.sort((a, b) => a.price - b.price);
+    magicTheGatheringCards?.sort((a, b) => a.price - b.price);
     sortPrice = false;
     counterSortPrice++;
   }
   else if(!sortPrice){
-    magicTheGatheringCards.sort((a, b) => b.price - a.price);
+    magicTheGatheringCards?.sort((a, b) => b.price - a.price);
     sortPrice = true;
     counterSortPrice++;
   }
@@ -97,7 +101,7 @@ app.get("/sortPrice", async (req,res)=> {
     })
   } 
   else {
-    magicTheGatheringCards = magicTheGatheringCards.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
+    magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard
@@ -107,7 +111,7 @@ app.get("/sortPrice", async (req,res)=> {
 
 app.get("/sortLegal", async (req,res)=> {
   let searchCard : string = String(req.query.q || "");
-  let magicTheGatheringCards = await magicTheGathering();
+  let magicTheGatheringCards = await main();
   let sortLegal : boolean;
   if(counterSortLegal === 0 || counterSortLegal % 2 === 0){
     sortLegal = true;
@@ -116,12 +120,12 @@ app.get("/sortLegal", async (req,res)=> {
     sortLegal = false;
   }
   if(sortLegal){
-    magicTheGatheringCards.sort((a, b) => +(a.legalInCommander) - +(b.legalInCommander));
+    magicTheGatheringCards?.sort((a, b) => +(a.legalInCommander) - +(b.legalInCommander));
     sortLegal = false;
     counterSortLegal++;
   }
   else if(!sortLegal){
-    magicTheGatheringCards.sort((a, b) => +(b.legalInCommander) - +(a.legalInCommander));
+    magicTheGatheringCards?.sort((a, b) => +(b.legalInCommander) - +(a.legalInCommander));
     sortLegal = true;
     counterSortLegal++;
   }
@@ -133,7 +137,7 @@ app.get("/sortLegal", async (req,res)=> {
     })
   } 
   else {
-    magicTheGatheringCards = magicTheGatheringCards.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
+    magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard
@@ -143,7 +147,7 @@ app.get("/sortLegal", async (req,res)=> {
 
 app.get("/sortColor", async (req,res)=> {
   let searchCard : string = String(req.query.q || "");
-  let magicTheGatheringCards = await magicTheGathering();
+  let magicTheGatheringCards = await main();
   let sortColor : boolean;
   if(counterSortColor === 0 || counterSortColor % 2 === 0){
     sortColor = true;
@@ -152,12 +156,12 @@ app.get("/sortColor", async (req,res)=> {
     sortColor = false;
   }
   if(sortColor){
-    magicTheGatheringCards.sort((a, b) => a.color.localeCompare(b.color));
+    magicTheGatheringCards?.sort((a, b) => a.color.localeCompare(b.color));
     sortColor = false;
     counterSortColor++;
   }
   else if(!sortColor){
-    magicTheGatheringCards.sort((a, b) => b.color.localeCompare(a.color));
+    magicTheGatheringCards?.sort((a, b) => b.color.localeCompare(a.color));
     sortColor = true;
     counterSortColor++;
   }
@@ -169,7 +173,7 @@ app.get("/sortColor", async (req,res)=> {
     })
   } 
   else {
-    magicTheGatheringCards = magicTheGatheringCards.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
+    magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard
@@ -179,7 +183,7 @@ app.get("/sortColor", async (req,res)=> {
 
 app.get("/sortSet", async (req,res)=> {
   let searchCard : string = String(req.query.q || "");
-  let magicTheGatheringCards = await magicTheGathering();
+  let magicTheGatheringCards = await main();
   let sortSet : boolean;
   if(counterSortSet === 0 || counterSortSet % 2 === 0){
     sortSet = true;
@@ -188,12 +192,12 @@ app.get("/sortSet", async (req,res)=> {
     sortSet = false;
   }
   if(sortSet){
-    magicTheGatheringCards.sort((a, b) => a.set.name.localeCompare(b.set.name));
+    magicTheGatheringCards?.sort((a, b) => a.set.name.localeCompare(b.set.name));
     sortSet = false;
     counterSortSet++;
   }
   else if(!sortSet){
-    magicTheGatheringCards.sort((a, b) => b.set.name.localeCompare(a.set.name));
+    magicTheGatheringCards?.sort((a, b) => b.set.name.localeCompare(a.set.name));
     sortSet = true;
     counterSortSet++;
   }
@@ -205,7 +209,7 @@ app.get("/sortSet", async (req,res)=> {
     })
   } 
   else {
-    magicTheGatheringCards = magicTheGatheringCards.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
+    magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard
@@ -215,7 +219,7 @@ app.get("/sortSet", async (req,res)=> {
 
 app.get("/sortSetSetPage", async (req,res)=> {
   let searchSet : string = String(req.query.q || "");
-  let magicTheGatheringCards = await magicTheGathering();
+  let magicTheGatheringCards = await main();
   let sortSet : boolean;
   if(counterSortSet === 0 || counterSortSet % 2 === 0){
     sortSet = true;
@@ -224,12 +228,12 @@ app.get("/sortSetSetPage", async (req,res)=> {
     sortSet = false;
   }
   if(sortSet){
-    magicTheGatheringCards.sort((a, b) => a.set.name.localeCompare(b.set.name));
+    magicTheGatheringCards?.sort((a, b) => a.set.name.localeCompare(b.set.name));
     sortSet = false;
     counterSortSet++;
   }
   else if(!sortSet){
-    magicTheGatheringCards.sort((a, b) => b.set.name.localeCompare(a.set.name));
+    magicTheGatheringCards?.sort((a, b) => b.set.name.localeCompare(a.set.name));
     sortSet = true;
     counterSortSet++;
   }
@@ -240,7 +244,7 @@ app.get("/sortSetSetPage", async (req,res)=> {
     })
   } 
   else {
-    magicTheGatheringCards = magicTheGatheringCards.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
+    magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
       searchSet: searchSet
@@ -250,7 +254,7 @@ app.get("/sortSetSetPage", async (req,res)=> {
 
 app.get("/sortDateSetPage", async (req,res)=> {
   let searchSet : string = String(req.query.q || "");
-  let magicTheGatheringCards = await magicTheGathering();
+  let magicTheGatheringCards = await main();
   let sortSet : boolean;
   if(counterSortSet === 0 || counterSortSet % 2 === 0){
     sortSet = true;
@@ -259,13 +263,13 @@ app.get("/sortDateSetPage", async (req,res)=> {
     sortSet = false;
   }
   if(sortSet){
-    magicTheGatheringCards.sort((a, b) => new Date(a.set.release).getTime() - new Date(b.set.release).getTime());
+    magicTheGatheringCards?.sort((a, b) => new Date(a.set.release).getTime() - new Date(b.set.release).getTime());
     sortSet = false;
     counterSortSet++;
   }
   else if(!sortSet){
     //magicTheGatheringCards.sort((a, b) => b.set.release - a.set.release);
-    magicTheGatheringCards.sort((a, b) => new Date(b.set.release).getTime() - new Date(a.set.release).getTime());
+    magicTheGatheringCards?.sort((a, b) => new Date(b.set.release).getTime() - new Date(a.set.release).getTime());
     sortSet = true;
     counterSortSet++;
   }
@@ -276,7 +280,7 @@ app.get("/sortDateSetPage", async (req,res)=> {
     })
   } 
   else {
-    magicTheGatheringCards = magicTheGatheringCards.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
+    magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
       searchSet: searchSet
@@ -286,7 +290,7 @@ app.get("/sortDateSetPage", async (req,res)=> {
 
 app.get("/sets", async (req,res)=> {
   let searchSet : string = String(req.query.q || "");
-  let magicTheGatheringCards = await magicTheGathering();
+  let magicTheGatheringCards = await main();
   if (!searchSet || searchSet.trim() === "" || searchSet == null) {
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
@@ -294,7 +298,7 @@ app.get("/sets", async (req,res)=> {
     })
   } 
   else {
-    magicTheGatheringCards = magicTheGatheringCards.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
+    magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
       searchSet: searchSet
@@ -307,6 +311,31 @@ async function magicTheGathering() : Promise<MagicTheGatheringCards[]> {
   const magicTheGatheringCards = await response.json() as MagicTheGatheringCards[];
   return magicTheGatheringCards;
 }
+
+async function main() {
+    try {
+      // Connect to the MongoDB cluster
+      await client.connect();
+ 
+      // Make the appropriate DB calls
+      //...let cursor =  client.db("Les").collection("pokemon").find<Pokemon>({});
+      let cursor =  client.db("Les").collection("magicTheGatheringCards").find<MagicTheGatheringCards>({});
+      let cardsInDatabase = await cursor.toArray();
+      if(cardsInDatabase.length === 0){
+        let magicTheGatheringCards = await magicTheGathering();
+        let result = await client.db("Les").collection("magicTheGatheringCards").insertMany(magicTheGatheringCards);
+      }
+      for(let i : number = 0; i < cardsInDatabase.length; i++){
+        console.log(cardsInDatabase[i]);
+      }
+      return cardsInDatabase;
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+main();
 
 app.listen(app.get("port"), () =>
   console.log("[server] http://localhost:" + app.get("port"))
