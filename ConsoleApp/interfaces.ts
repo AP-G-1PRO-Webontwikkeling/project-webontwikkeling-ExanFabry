@@ -1,4 +1,5 @@
 import mtgCards from "../JSON/mtg.json";
+import { ObjectId } from "mongodb";
 
 export interface MagicTheGatheringCards {
     id:               number;
@@ -19,4 +20,21 @@ export interface Set {
     code:    string;
     release: Date;
     image:   string;
+}
+
+export interface User {
+    _id?: ObjectId;
+    email: string;
+    password?: string;
+    role: "ADMIN" | "USER";
+}
+
+export interface FlashMessage {
+    type: "error" | "success"
+    message: string;
+}
+
+export interface SessionData {
+    user?: User;
+    message?: FlashMessage;
 }

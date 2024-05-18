@@ -2,15 +2,25 @@ import express from "express";
 import ejs from "ejs";
 import { MagicTheGatheringCards, Set } from './ConsoleApp/interfaces';
 import { MongoClient } from "mongodb";
+import { connect, login, MONGODB_URI, main } from "./database";
+import session from "./session";
+import { User } from "./ConsoleApp/interfaces";
+import { secureMiddleware } from "./secureMiddleware";
+import { loginRouter } from "./loginRouter";
+import { homeRouter } from "./homeRouter";
+import { flashMiddleware } from "./flashMiddleware";
+import bodyParser from 'body-parser';
 
-const uri = "mongodb+srv://Exan:DatabaseLaboOefeningen@cluster0.dxopdrp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-const client = new MongoClient(uri);
+const client = new MongoClient(MONGODB_URI);
 
 const app = express();
-
+app.use(session);
+app.use(flashMiddleware);
 app.set("view engine", "ejs");
 app.set("port", 3000);
 app.use(express.static("public"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 let counterSortName : number = 0;
 let counterSortPrice : number = 0;
@@ -18,23 +28,64 @@ let counterSortLegal : number = 0;
 let counterSortColor : number = 0;
 let counterSortSet : number = 0;
 
-app.get("/", async (req,res)=> {
+app.get("/", secureMiddleware, async (req,res)=> {
+  console.log("Hello world!");
   let searchCard : string = String(req.query.q || "");
   let magicTheGatheringCards = await main();
+  console.log(searchCard);
   if (!searchCard || searchCard.trim() === "" || searchCard == null) {
-    console.log("Hello world");
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: "",
+      user: req.session.user
     })
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     });
   }
+});
+
+/*app.get("/", secureMiddleware, async(req, res) => {
+  let searchCard : string = String(req.query.q || "");
+  let magicTheGatheringCards = await main();
+  console.log(searchCard);
+  res.render("index", {
+    magicTheGathering: magicTheGatheringCards,
+    searchCard: ""
+  });
+});*/
+
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.post("/login", async(req, res) => {
+  console.log("1");
+  const email : string = req.body.email;
+  const password : string = req.body.password;
+  try {
+    console.log("2")
+    let user : User = await login(email, password);
+    console.log("3")
+    delete user.password; 
+    console.log("4")
+    req.session.user = user;
+    console.log("5")
+    res.redirect("/");
+  } catch (e : any) {
+      res.redirect("/login");
+  }
+});
+
+app.get("/logout", async(req, res) => {
+  req.session.destroy(() => {
+      res.redirect("/login");
+  });
 });
 
 app.get("/sortName", async (req,res)=> {
@@ -61,14 +112,16 @@ app.get("/sortName", async (req,res)=> {
     console.log("Hello world");
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     })
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     });
   }
 });
@@ -97,14 +150,16 @@ app.get("/sortPrice", async (req,res)=> {
     console.log("Hello world");
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     })
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     });
   }
 });
@@ -133,14 +188,16 @@ app.get("/sortLegal", async (req,res)=> {
     console.log("Hello world");
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     })
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     });
   }
 });
@@ -169,14 +226,16 @@ app.get("/sortColor", async (req,res)=> {
     console.log("Hello world");
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     })
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     });
   }
 });
@@ -205,14 +264,16 @@ app.get("/sortSet", async (req,res)=> {
     console.log("Hello world");
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     })
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
     res.render("index",{
       magicTheGathering: magicTheGatheringCards,
-      searchCard: searchCard
+      searchCard: searchCard,
+      user: req.session.user
     });
   }
 });
@@ -240,14 +301,16 @@ app.get("/sortSetSetPage", async (req,res)=> {
   if (!searchSet || searchSet.trim() === "" || searchSet == null) {
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
-      searchSet: searchSet
+      searchSet: searchSet,
+      user: req.session.user
     })
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
-      searchSet: searchSet
+      searchSet: searchSet,
+      user: req.session.user
     });
   }
 });
@@ -276,14 +339,16 @@ app.get("/sortDateSetPage", async (req,res)=> {
   if (!searchSet || searchSet.trim() === "" || searchSet == null) {
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
-      searchSet: searchSet
+      searchSet: searchSet,
+      user: req.session.user
     })
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
-      searchSet: searchSet
+      searchSet: searchSet,
+      user: req.session.user
     });
   }
 });
@@ -294,49 +359,26 @@ app.get("/sets", async (req,res)=> {
   if (!searchSet || searchSet.trim() === "" || searchSet == null) {
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
-      searchSet: searchSet
+      searchSet: searchSet,
+      user: req.session.user
     })
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
     res.render("sets",{
       magicTheGathering: magicTheGatheringCards,
-      searchSet: searchSet
+      searchSet: searchSet,
+      user: req.session.user
     });
   }
 });
 
-async function magicTheGathering() : Promise<MagicTheGatheringCards[]> {
-  const response = await fetch('https://raw.githubusercontent.com/ExanFabry/Projectopdracht/master/JSON/mtg.json');
-  const magicTheGatheringCards = await response.json() as MagicTheGatheringCards[];
-  return magicTheGatheringCards;
-}
-
-async function main() {
-    try {
-      // Connect to the MongoDB cluster
-      await client.connect();
- 
-      // Make the appropriate DB calls
-      //...let cursor =  client.db("Les").collection("pokemon").find<Pokemon>({});
-      let cursor =  client.db("Les").collection("magicTheGatheringCards").find<MagicTheGatheringCards>({});
-      let cardsInDatabase = await cursor.toArray();
-      if(cardsInDatabase.length === 0){
-        let magicTheGatheringCards = await magicTheGathering();
-        let result = await client.db("Les").collection("magicTheGatheringCards").insertMany(magicTheGatheringCards);
-      }
-      for(let i : number = 0; i < cardsInDatabase.length; i++){
-        console.log(cardsInDatabase[i]);
-      }
-      return cardsInDatabase;
-    } catch (e) {
-        console.error(e);
-    } finally {
-        await client.close();
-    }
-}
-main();
-
-app.listen(app.get("port"), () =>
-  console.log("[server] http://localhost:" + app.get("port"))
-);
+app.listen(app.get("port"), async() => {
+  try {
+      await connect();
+      console.log("Server started on http://localhost:" + app.get('port'));
+  } catch (e) {
+      console.log(e);
+      process.exit(1); 
+  }
+});

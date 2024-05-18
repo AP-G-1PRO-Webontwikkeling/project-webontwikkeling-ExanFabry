@@ -1,4 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/modal.js" defer></script>
+    <title>Home</title>
+</head>
+<body>
 <header>
     <a href="/">Home</a>
     <a href="/sets">Sets</a>
+    <% if (user.role === "ADMIN") { %>
+        <a href="/sets">Edit</a>
+    <% } %>
+    <a href="/logout">Logout</a>
 </header>

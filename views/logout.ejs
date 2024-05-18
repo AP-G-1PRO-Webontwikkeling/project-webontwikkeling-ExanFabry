@@ -1,0 +1,7 @@
+<%- include("partials/header") %>
+    <%= user.email %> is logged in.
+
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
+<%- include("partials/footer") %>
