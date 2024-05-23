@@ -46,16 +46,20 @@ async function createInitialUser() {
 
 export async function login(email: string, password: string) {
     if (email === "" || password === "") {
+        console.log("User not found");
         throw new Error("Email and password required");
     }
     let user : User | null = await userCollection.findOne<User>({email: email});
     if (user) {
         if (await bcrypt.compare(password, user.password!)) {
+            console.log(user);
             return user;
         } else {
+            console.log("Password incorrect");
             throw new Error("Password incorrect");
         }
     } else {
+        console.log("User not found");
         throw new Error("User not found");
     }
 }
@@ -87,5 +91,28 @@ export async function main() {
         console.error(e);
     } finally {
         await client.close();
+    }
+}
+export async function addUser(username: string, password: string) {
+    try {
+        // Check if the user already exists
+        const existingUser = await userCollection.findOne({ username: username });
+        if (existingUser) {
+            throw new Error(`User "${username}" already exists.`);
+        }
+
+        // If the user does not exist, create a new user with an empty deck array
+        const newUser: User = {
+            email: username,
+            password: await bcrypt.hash(password, saltRounds),
+            role: "USER"
+        };
+
+        // Insert the new user into the collection
+        await userCollection.insertOne(newUser);
+
+        console.log(`User "${username}" added.`);
+    } catch (e) {
+        console.error(e);
     }
 }

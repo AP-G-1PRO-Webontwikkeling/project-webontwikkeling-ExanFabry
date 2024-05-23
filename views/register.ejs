@@ -1,0 +1,10 @@
+<%- include("partials/header") %>
+<form action="/register/createNewAccount" method="post" id="registerForm">
+    <h1>Registreer&colon;</h1>
+    <label for="email">Username</label>
+    <input type="text" name="username" placeholder="person@example.com" required><br>
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="&bull;&bull;&bull;&bull;" required><br>
+    <input type="submit" value="Registreer">
+</form>
+<%- include("partials/footer") %>

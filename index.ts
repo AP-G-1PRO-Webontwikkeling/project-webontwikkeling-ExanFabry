@@ -10,6 +10,7 @@ import { loginRouter } from "./loginRouter";
 import { homeRouter } from "./homeRouter";
 import { flashMiddleware } from "./flashMiddleware";
 import bodyParser from 'body-parser';
+import { registerRouter } from "./registerRouter";
 
 const client = new MongoClient(MONGODB_URI);
 
@@ -21,6 +22,7 @@ app.set("port", 3000);
 app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/register", registerRouter());
 
 let counterSortName : number = 0;
 let counterSortPrice : number = 0;
@@ -34,7 +36,8 @@ app.get("/", secureMiddleware, async (req,res)=> {
   let magicTheGatheringCards = await main();
   console.log(searchCard);
   if (!searchCard || searchCard.trim() === "" || searchCard == null) {
-    res.render("index",{
+    res.render("index", {
+      title: "Home",
       magicTheGathering: magicTheGatheringCards,
       searchCard: "",
       user: req.session.user
@@ -42,23 +45,14 @@ app.get("/", secureMiddleware, async (req,res)=> {
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.name.toLowerCase().includes(searchCard.toLowerCase()));
-    res.render("index",{
+    res.render("index", {
+      title: "Home",
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard,
       user: req.session.user
     });
   }
 });
-
-/*app.get("/", secureMiddleware, async(req, res) => {
-  let searchCard : string = String(req.query.q || "");
-  let magicTheGatheringCards = await main();
-  console.log(searchCard);
-  res.render("index", {
-    magicTheGathering: magicTheGatheringCards,
-    searchCard: ""
-  });
-});*/
 
 app.get("/login", (req, res) => {
   res.render("login");
@@ -111,6 +105,7 @@ app.get("/sortName", async (req,res)=> {
   if (!searchCard || searchCard.trim() === "" || searchCard == null) {
     console.log("Hello world");
     res.render("index",{
+      title: "Home",
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard,
       user: req.session.user
@@ -148,7 +143,8 @@ app.get("/sortPrice", async (req,res)=> {
   }
   if (!searchCard || searchCard.trim() === "" || searchCard == null) {
     console.log("Hello world");
-    res.render("index",{
+    res.render("index", {
+      title: "Home",
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard,
       user: req.session.user
@@ -186,7 +182,8 @@ app.get("/sortLegal", async (req,res)=> {
   }
   if (!searchCard || searchCard.trim() === "" || searchCard == null) {
     console.log("Hello world");
-    res.render("index",{
+    res.render("index", {
+      title: "Home",
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard,
       user: req.session.user
@@ -224,7 +221,8 @@ app.get("/sortColor", async (req,res)=> {
   }
   if (!searchCard || searchCard.trim() === "" || searchCard == null) {
     console.log("Hello world");
-    res.render("index",{
+    res.render("index", {
+      title: "Home",
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard,
       user: req.session.user
@@ -262,7 +260,8 @@ app.get("/sortSet", async (req,res)=> {
   }
   if (!searchCard || searchCard.trim() === "" || searchCard == null) {
     console.log("Hello world");
-    res.render("index",{
+    res.render("index", {
+      title: "Home",
       magicTheGathering: magicTheGatheringCards,
       searchCard: searchCard,
       user: req.session.user
@@ -299,7 +298,8 @@ app.get("/sortSetSetPage", async (req,res)=> {
     counterSortSet++;
   }
   if (!searchSet || searchSet.trim() === "" || searchSet == null) {
-    res.render("sets",{
+    res.render("sets", {
+      title: "Sets",
       magicTheGathering: magicTheGatheringCards,
       searchSet: searchSet,
       user: req.session.user
@@ -337,7 +337,8 @@ app.get("/sortDateSetPage", async (req,res)=> {
     counterSortSet++;
   }
   if (!searchSet || searchSet.trim() === "" || searchSet == null) {
-    res.render("sets",{
+    res.render("sets", {
+      title: "Sets",
       magicTheGathering: magicTheGatheringCards,
       searchSet: searchSet,
       user: req.session.user
@@ -365,7 +366,8 @@ app.get("/sets", async (req,res)=> {
   } 
   else {
     magicTheGatheringCards = magicTheGatheringCards?.filter(magicTheGatheringCards => magicTheGatheringCards.set.name.toLowerCase().includes(searchSet.toLowerCase()));
-    res.render("sets",{
+    res.render("sets", {
+      title: "Sets",
       magicTheGathering: magicTheGatheringCards,
       searchSet: searchSet,
       user: req.session.user

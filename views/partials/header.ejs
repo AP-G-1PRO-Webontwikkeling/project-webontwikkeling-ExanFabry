@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/modal.js" defer></script>
-    <title>Home</title>
+    <title><%= title %></title>
 </head>
 <body>
 <header>
@@ -16,5 +16,6 @@
     <% if (user.role === "ADMIN") { %>
         <a href="/sets">Edit</a>
     <% } %>
+    <a href="/register">Register</a>
     <a href="/logout">Logout</a>
 </header>

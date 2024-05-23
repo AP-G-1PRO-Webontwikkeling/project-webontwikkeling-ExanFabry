@@ -49,7 +49,7 @@ main .allCards{
     width: 15rem;
     margin: 0.5rem;
 }
-#loginForm{
+#loginForm, #registerForm{
     padding-top: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -59,9 +59,12 @@ main .allCards{
 #loginForm div{
     padding-bottom: 1rem;
 }
-#loginForm button{
+#loginForm button, #registerForm button{
     border: 1px solid black;
     padding: 0.5rem;
+}
+#registerForm h1{
+    font-weight: bold;
 }
 
 /*Footer*/
