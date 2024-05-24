@@ -89,8 +89,6 @@ export async function main() {
       return cardsInDatabase;
     } catch (e) {
         console.error(e);
-    } finally {
-        await client.close();
     }
 }
 export async function addUser(username: string, password: string) {
